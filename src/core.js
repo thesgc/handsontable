@@ -423,20 +423,17 @@ Handsontable.Core = function Core(rootElement, userSettings) {
                   }
                 }
                 if (value !== null && typeof value === 'object') {
-                  if (orgValue === null || typeof orgValue !== 'object') {
-                    pushData = false;
-
-                  } else {
-                    orgValueSchema = Handsontable.helper.duckSchema(orgValue[0] || orgValue);
-                    valueSchema = Handsontable.helper.duckSchema(value[0] || value);
-
-                    /* jshint -W073 */
-                    if (Handsontable.helper.isObjectEquals(orgValueSchema, valueSchema)) {
+                  // if (orgValue === null || typeof orgValue !== 'object') {
+                  //   pushData = false;
+                  // } else {
+                  //   orgValueSchema = Handsontable.helper.duckSchema(orgValue[0] || orgValue);
+                  //   valueSchema = Handsontable.helper.duckSchema(value[0] || value);
+                  //   if (Handsontable.helper.isObjectEquals(orgValueSchema, valueSchema)) {
                       value = Handsontable.helper.deepClone(value);
-                    } else {
-                      pushData = false;
-                    }
-                  }
+                  //   } else {
+                  //     pushData = false;
+                  //   }
+                  // }
 
                 } else if (orgValue !== null && typeof orgValue === 'object') {
                   pushData = false;
